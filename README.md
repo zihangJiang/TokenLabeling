@@ -64,5 +64,20 @@ We provide NFNet-F6 generated dense label map [here](https://drive.google.com/fi
 
 Coming soon
 
+#### 5. Reference
+If you use this repo or find this repo useful, please cite:
+```
+@misc{jiang2021token,
+      title={Token Labeling: Training a 85.5% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet}, 
+      author={Zihang Jiang and Qibin Hou and Li Yuan and Daquan Zhou and Xiaojie Jin and Anran Wang and Jiashi Feng},
+      year={2021},
+      eprint={2104.10858},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
 #### Related projects
 [T2T-ViT](https://github.com/yitu-opensource/T2T-ViT/), [Re-labeling ImageNet](https://github.com/naver-ai/relabel_imagenet).
+
+
