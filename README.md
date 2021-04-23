@@ -57,27 +57,12 @@ CUDA_VISIBLE_DEVICES=0 bash eval.sh /path/to/imagenet/val /path/to/checkpoint
 
 #### 4. Label data
 
-We provide NFNet-F6 generated dense label map [here](https://drive.google.com/file/d/1Cat8HQPSRVJFPnBLlfzVE0Exe65a_4zh/view?usp=sharing).
+We provide NFNet-F6 generated dense label map [here](https://drive.google.com/file/d/1Cat8HQPSRVJFPnBLlfzVE0Exe65a_4zh/view?usp=sharing). As NFNet-F6 are based on pure ImageNet data, no extra training data is involved.
 
 
 #### 4. Training
 
 Coming soon
 
-#### 5. Reference
-If you use this repo or find this repo useful, please cite:
-```
-@misc{jiang2021token,
-      title={Token Labeling: Training a 85.5% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet}, 
-      author={Zihang Jiang and Qibin Hou and Li Yuan and Daquan Zhou and Xiaojie Jin and Anran Wang and Jiashi Feng},
-      year={2021},
-      eprint={2104.10858},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
-
 #### Related projects
 [T2T-ViT](https://github.com/yitu-opensource/T2T-ViT/), [Re-labeling ImageNet](https://github.com/naver-ai/relabel_imagenet).
-
-
