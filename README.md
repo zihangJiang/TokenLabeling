@@ -24,7 +24,7 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 | LV-ViT-M                        | 20    | 512  |       384        |  56.03M |  85.4 |[link](https://drive.google.com/file/d/1mgKpRXXIpudVSeCM1w85_ZuNcMesIRMW/view?usp=sharing) |
 | LV-ViT-L                        | 24    | 768  |       448        | 150.47M |  86.2 |[link](https://drive.google.com/file/d/1VUv1uSpnd5lcf_EVEPi4bdLhG7bP5p85/view?usp=sharing) |
 
-# requirements
+#### Requirements
 
 torch>=1.4.0
 torchvision>=0.5.0
