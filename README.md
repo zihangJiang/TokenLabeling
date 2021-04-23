@@ -49,22 +49,22 @@ data prepare: ImageNet with the following folder structure, you can extract imag
 │  ├── ......
 ```
 
-#### 3. Validation
+#### Validation
 Replace DATA_DIR with your imagenet validation set path and MODEL_DIR with the checkpoint path
 ```
 CUDA_VISIBLE_DEVICES=0 bash eval.sh /path/to/imagenet/val /path/to/checkpoint
 ```
 
-#### 4. Label data
+#### Label data
 
 We provide NFNet-F6 generated dense label map [here](https://drive.google.com/file/d/1Cat8HQPSRVJFPnBLlfzVE0Exe65a_4zh/view?usp=sharing). As NFNet-F6 are based on pure ImageNet data, no extra training data is involved.
 
 
-#### 4. Training
+#### Training
 
 Coming soon
 
-#### 5. Reference
+#### Reference
 If you use this repo or find it useful, please consider citing:
 ```
 @misc{jiang2021token,
