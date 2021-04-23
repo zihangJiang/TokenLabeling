@@ -68,7 +68,7 @@ Coming soon
 If you use this repo or find it useful, please consider citing:
 ```
 @misc{jiang2021token,
-      title={Token Labeling: Training a 85.5% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet}, 
+      title={Token Labeling: Training a 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet}, 
       author={Zihang Jiang and Qibin Hou and Li Yuan and Daquan Zhou and Xiaojie Jin and Anran Wang and Jiashi Feng},
       year={2021},
       eprint={2104.10858},
