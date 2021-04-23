@@ -18,11 +18,11 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 
 | Model                           | layer | dim  | Image resolution |  Param  | Top 1 |Download |
 | :------------------------------ | :---- | :--- | :--------------: |-------: | ----: |   ----: |
-| LV-ViT-S                        | 16    | 384  |       224        |  25.77M |  83.3 |[link](https://drive.google.com/file/d/1QQL7sjj41BhjCO4OdDTDgD7u00Guuo1j/view?usp=sharing) |
-| LV-ViT-S                        | 16    | 384  |       384        |  26.30M |  84.4 |[link](https://drive.google.com/file/d/1Q1rdCbQTFiB1OjvKYzECcNodbjcdW_FA/view?usp=sharing) |
-| LV-ViT-M                        | 20    | 512  |       224        |  55.83M |  84.0 |[link](https://drive.google.com/file/d/1uPDBtkriLm7mEB-tx3nYpWncjD-R0ulC/view?usp=sharing) |
-| LV-ViT-M                        | 20    | 512  |       384        |  56.03M |  85.4 |[link](https://drive.google.com/file/d/1mgKpRXXIpudVSeCM1w85_ZuNcMesIRMW/view?usp=sharing) |
-| LV-ViT-L                        | 24    | 768  |       448        | 150.47M |  86.2 |[link](https://drive.google.com/file/d/1VUv1uSpnd5lcf_EVEPi4bdLhG7bP5p85/view?usp=sharing) |
+| LV-ViT-S                        | 16    | 384  |       224        |  25.77M |  83.3 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-224-83.3.pth.tar) |
+| LV-ViT-S                        | 16    | 384  |       384        |  26.30M |  84.4 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-384-84.4.tar) |
+| LV-ViT-M                        | 20    | 512  |       224        |  55.83M |  84.0 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-224-84.0.tar) |
+| LV-ViT-M                        | 20    | 512  |       384        |  56.03M |  85.4 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-384-85.4.tar) |
+| LV-ViT-L                        | 24    | 768  |       448        | 150.47M |  86.2 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_l-150M-448-86.2.tar) |
 
 #### Requirements
 
