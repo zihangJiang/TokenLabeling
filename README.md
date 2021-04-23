@@ -6,13 +6,13 @@ Pytorch implementation | [arxiv](https://arxiv.org/abs/2104.10858) |
 
 
 
-![Compare](/home/jzh/repos/LV-ViT/Compare.png)
+![Compare](Compare.png)
 
 Comparison between the proposed LV-ViT and other recent works based on transformers. Note that we only show models whose model sizes are under 100M.
 
 #### Training Pipeline
 
-![Pipeline](/home/jzh/repos/LV-ViT/Pipeline.png)
+![Pipeline](Pipeline.png)
 
 Our codes are based on the [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) by [Ross Wightman](https://github.com/rwightman).
 
