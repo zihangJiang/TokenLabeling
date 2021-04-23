@@ -1,6 +1,4 @@
-# Token Labeling
-
-#### Training a 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet
+# Token Labeling: Training a 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet
 
 This is a Pytorch implementation of our Technical report ([arxiv](https://arxiv.org/abs/2104.10858)). 
 
