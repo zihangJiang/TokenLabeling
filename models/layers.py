@@ -45,6 +45,9 @@ class GroupLinear(nn.Module):
 
 
 class Mlp(nn.Module):
+    '''
+    MLP with support to use group linear operator
+    '''
     def __init__(self, in_features, hidden_features=None, out_features=None, act_layer=nn.GELU, drop=0., group=1):
         super().__init__()
         out_features = out_features or in_features
@@ -81,6 +84,11 @@ class GroupNorm(nn.Module):
 
 
 class Attention(nn.Module):
+    '''
+    Multi-head self-attention
+    from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+    with some modification to support different num_heads and head_dim.
+    '''
     def __init__(self, dim, num_heads=8, head_dim=None, qkv_bias=False, qk_scale=None, attn_drop=0., proj_drop=0.):
         super().__init__()
         self.num_heads = num_heads
@@ -89,7 +97,6 @@ class Attention(nn.Module):
         else:
             head_dim = dim // num_heads
             self.head_dim = head_dim
-        # NOTE scale factor was wrong in my original version, can set manually to be compat with prev weights
         self.scale = qk_scale or head_dim ** -0.5
 
         self.qkv = nn.Linear(dim, self.head_dim* self.num_heads * 3, bias=qkv_bias)
@@ -123,7 +130,9 @@ class Attention(nn.Module):
         return x
         
 class Block(nn.Module):
-
+    '''
+    Pre-layernorm transformer block
+    '''
     def __init__(self, dim, num_heads, head_dim=None, mlp_ratio=4., qkv_bias=False, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0., act_layer=nn.GELU, norm_layer=nn.LayerNorm, group=1, skip_lam=1.):
         super().__init__()
@@ -173,7 +182,7 @@ class Block(nn.Module):
 
 class MHABlock(nn.Module):
     """
-    Multihead Attention
+    Multihead Attention block with residual branch
     """
     def __init__(self, dim, num_heads, head_dim=None, mlp_ratio=4., qkv_bias=False, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0., act_layer=nn.GELU, norm_layer=nn.LayerNorm, group=1, skip_lam=1.):
@@ -209,7 +218,7 @@ class MHABlock(nn.Module):
 
 class FFNBlock(nn.Module):
     """
-    Feed forward network
+    Feed forward network with residual branch
     """
     def __init__(self, dim, num_heads, head_dim=None, mlp_ratio=4., qkv_bias=False, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0., act_layer=nn.GELU, norm_layer=nn.LayerNorm, group=1, skip_lam=1.):
@@ -243,6 +252,7 @@ class FFNBlock(nn.Module):
 class HybridEmbed(nn.Module):
     """ CNN Feature Map Embedding
     Extract feature map from CNN, flatten, project to embedding dim.
+    from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
     """
     def __init__(self, backbone, img_size=224, feature_size=None, in_chans=3, embed_dim=768):
         super().__init__()
@@ -272,7 +282,9 @@ class HybridEmbed(nn.Module):
 
 
 class PatchEmbedNaive(nn.Module):
-    """ Image to Patch Embedding
+    """ 
+    Image to Patch Embedding
+    from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
     """
     def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
         super().__init__()
@@ -302,7 +314,8 @@ class PatchEmbedNaive(nn.Module):
 
 
 class PatchEmbed4_2(nn.Module):
-    """ Image to Patch Embedding with 4 layer convolution
+    """ 
+    Image to Patch Embedding with 4 layer convolution
     """
     def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
         super().__init__()
@@ -355,7 +368,8 @@ class PatchEmbed4_2(nn.Module):
 
     
 class PatchEmbed4_2_128(nn.Module):
-    """ Image to Patch Embedding with 4 layer convolution
+    """ 
+    Image to Patch Embedding with 4 layer convolution and 128 filters
     """
     def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
         super().__init__()
