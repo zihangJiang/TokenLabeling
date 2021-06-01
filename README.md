@@ -2,17 +2,17 @@
 
 This is a Pytorch implementation of our technical report. 
 
-
-
-![Compare](Compare.png)
+![Compare](figures/Compare.png)
 
 Comparison between the proposed LV-ViT and other recent works based on transformers. Note that we only show models whose model sizes are under 100M.
 
-#### Training Pipeline
-
-![Pipeline](Pipeline.png)
-
 Our codes are based on the [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) by [Ross Wightman](https://github.com/rwightman).
+
+### Update
+
+**2021.6: Release training code and segmentation model.**
+
+**2021.4: Release LV-ViT models.**
 
 #### LV-ViT Models
 
@@ -63,7 +63,60 @@ We provide NFNet-F6 generated dense label map [here](https://drive.google.com/fi
 
 #### Training
 
-Coming soon
+Train the LV-ViT-S: 
+
+If only 4 GPUs are available,
+
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./distributed_train.sh 4 /path/to/imagenet --model lvvit_s -b 256 --apex-amp --img-size 224 --drop-path 0.1 --token-label --token-label-data /path/to/label_data --token-label-size 14 --model-ema
+```
+
+If 8 GPUs are available: 
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./distributed_train.sh 8 /path/to/imagenet --model lvvit_s -b 128 --apex-amp --img-size 224 --drop-path 0.1 --token-label --token-label-data /path/to/label_data --token-label-size 14 --model-ema
+```
+
+
+Train the LV-ViT-M and LV-ViT-L (run on 8 GPUs):
+
+
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./distributed_train.sh 8 /path/to/imagenet --model lvvit_m -b 128 --apex-amp --img-size 224 --drop-path 0.2 --token-label --token-label-data /path/to/label_data --token-label-size 14 --model-ema
+```
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./distributed_train.sh 8 /path/to/imagenet --model lvvit_l -b 128 --lr 1.e-3 --aa rand-n3-m9-mstd0.5-inc1 --apex-amp --img-size 224 --drop-path 0.3 --token-label --token-label-data /path/to/label_data --token-label-size 14 --model-ema
+```
+If you want to train our LV-ViT on images with 384x384 resolution, please use `--img-size 384 --token-label-size 24`.
+
+#### Fine-tuning
+
+To Fine-tune the pre-trained LV-ViT-S on images with 384x384 resolution:
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./distributed_train.sh 8 /path/to/imagenet --model lvvit_s -b 64 --apex-amp --img-size 384 --drop-path 0.1 --token-label --token-label-data /path/to/label_data --token-label-size 24 --lr 5.e-6 --min-lr 5.e-6 --weight-decay 1.e-8 --finetune /path/to/checkpoint
+```
+
+### Segmentation
+
+Our Segmentation model are fully based upon the [MMSegmentation](https://github.com/open-mmlab/mmsegmentation) Toolkit. The model and config files are under `seg/` folder which follow the same folder structure. You can simply drop in these file to get start.
+
+```shell
+git clone https://github.com/open-mmlab/mmsegmentation # and install
+
+cp seg/mmseg/models/backbones/vit.py mmsegmentation/mmseg/models/backbones/
+cp -r seg/configs/lvvit mmsegmentation/configs/
+
+# test upernet+lvvit_s (add --aug-test to test on multi scale)
+cd mmsegmentation
+./tools/dist_test.sh configs/lvvit/upernet_lvvit_s_512x512_160k_ade20k.py /path/to/checkpoint 8 --eval mIoU [--aug-test]
+```
+
+| Backbone                        | Method  | Crop size | Lr Schd |  mIoU   |  mIoU(ms) | Pixel Acc.| Param |Download |
+| :------------------------------ | :------ | :-------- | :------ |:------- |:--------- | :-------- | :---- | :------ |
+| LV-ViT-S                        | UperNet |  512x512  |   160k  |  47.9   |    48.6   |   83.1    |  44M  |[link](https://drive.google.com/file/d/1uqNgtSnIQ-AM8tHjte1DpCawzd_1B5zI/view?usp=sharing) |
+| LV-ViT-M                        | UperNet |  512x512  |   160k  |  49.4   |    50.6   |   83.5    |  77M  |[link](https://drive.google.com/file/d/1-41KTtaam2tysS-0y8Ggr8DGN5tWTyUR/view?usp=sharing) |
+| LV-ViT-L                        | UperNet |  512x512  |   160k  |  50.9   |    51.8   |   84.1    |  209M |[link](https://drive.google.com/file/d/16WWdlgSjtVqYLufT83BLhhl1NAmKENqd/view?usp=sharing) |
+
+
 
 #### Reference
 If you use this repo or find it useful, please consider citing:
@@ -77,4 +130,4 @@ If you use this repo or find it useful, please consider citing:
 ```
 
 #### Related projects
-[T2T-ViT](https://github.com/yitu-opensource/T2T-ViT/), [Re-labeling ImageNet](https://github.com/naver-ai/relabel_imagenet).
+[T2T-ViT](https://github.com/yitu-opensource/T2T-ViT/), [Re-labeling ImageNet](https://github.com/naver-ai/relabel_imagenet), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation).
