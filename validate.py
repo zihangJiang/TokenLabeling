@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 """ ImageNet Validation Script
-
-This is intended to be a lean and easily modifiable ImageNet validation script for evaluating pretrained
-models or training checkpoints against ImageNet or similarly organized image datasets. It prioritizes
-canonical PyTorch, standard Python style, and good performance. Repurpose as you see fit.
-
-Hacked together by Ross Wightman (https://github.com/rwightman)
-
+Adapted from https://github.com/rwightman/pytorch-image-models
 The script is further extend to evaluate LV-ViT models
 
 """
