@@ -117,6 +117,11 @@ cd mmsegmentation
 | LV-ViT-L                        | UperNet |  512x512  |   160k  |  50.9   |    51.8   |   84.1    |  209M |[link](https://drive.google.com/file/d/16WWdlgSjtVqYLufT83BLhhl1NAmKENqd/view?usp=sharing) |
 
 
+### Visualization
+
+We apply the visualization method in this [repo](https://github.com/hila-chefer/Transformer-Explainability) to visualize the parts of the image that led to a certain classification for DeiT-Base and our LV-ViT-S. The parts of the image that used by the network to make the decision are highlighted in red.
+
+![Compare](figures/Top1.jpg)
 
 #### Reference
 If you use this repo or find it useful, please consider citing:
@@ -130,4 +135,4 @@ If you use this repo or find it useful, please consider citing:
 ```
 
 #### Related projects
-[T2T-ViT](https://github.com/yitu-opensource/T2T-ViT/), [Re-labeling ImageNet](https://github.com/naver-ai/relabel_imagenet), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation).
+[T2T-ViT](https://github.com/yitu-opensource/T2T-ViT/), [Re-labeling ImageNet](https://github.com/naver-ai/relabel_imagenet), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation), [Transformer Explainability](https://github.com/hila-chefer/Transformer-Explainability).
