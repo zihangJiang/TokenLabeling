@@ -112,9 +112,9 @@ cd mmsegmentation
 
 | Backbone                        | Method  | Crop size | Lr Schd |  mIoU   |  mIoU(ms) | Pixel Acc.| Param |Download |
 | :------------------------------ | :------ | :-------- | :------ |:------- |:--------- | :-------- | :---- | :------ |
-| LV-ViT-S                        | UperNet |  512x512  |   160k  |  47.9   |    48.6   |   83.1    |  44M  |[link](https://drive.google.com/file/d/1uqNgtSnIQ-AM8tHjte1DpCawzd_1B5zI/view?usp=sharing) |
-| LV-ViT-M                        | UperNet |  512x512  |   160k  |  49.4   |    50.6   |   83.5    |  77M  |[link](https://drive.google.com/file/d/1-41KTtaam2tysS-0y8Ggr8DGN5tWTyUR/view?usp=sharing) |
-| LV-ViT-L                        | UperNet |  512x512  |   160k  |  50.9   |    51.8   |   84.1    |  209M |[link](https://drive.google.com/file/d/16WWdlgSjtVqYLufT83BLhhl1NAmKENqd/view?usp=sharing) |
+| LV-ViT-S                        | UperNet |  512x512  |   160k  |  47.9   |    48.6   |   83.1    |  44M  |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/v1.1-seg/upernet_lvvit_s.pth) |
+| LV-ViT-M                        | UperNet |  512x512  |   160k  |  49.4   |    50.6   |   83.5    |  77M  |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/v1.1-seg/upernet_lvvit_m.pth) |
+| LV-ViT-L                        | UperNet |  512x512  |   160k  |  50.9   |    51.8   |   84.1    |  209M |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/v1.1-seg/upernet_lvvit_l.pth) |
 
 
 ### Visualization
