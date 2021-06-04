@@ -24,15 +24,15 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # patch models
     'lvvit_base_patch16_224': _cfg(
-        url='https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-224-84.0.tar',
+        url='https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-224-84.0.pth.tar',
         mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225),
     ),
     'lvvit_small_patch16_224': _cfg(
-        url='https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-224-83.3.pth.tar',
+        url='https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-224-83.3.pth.tar',
         mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225),
     ),
     'lvvit_small_patch16_384': _cfg(
-        url='https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-384-84.4.tar',
+        url='https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-384-84.4.pth.tar',
         mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225),
     )
 }
