@@ -1,6 +1,6 @@
-# Token Labeling: Training an 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet ([arxiv](https://arxiv.org/abs/2104.10858))
+# All Tokens Matter: Token Labeling for Training Better Vision Transformers ([arxiv](https://arxiv.org/abs/2104.10858))
 
-This is a Pytorch implementation of our technical report. 
+This is a Pytorch implementation of our paper. 
 
 ![Compare](figures/Compare.png)
 
@@ -31,6 +31,7 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 torch>=1.4.0
 torchvision>=0.5.0
 pyyaml
+scipy
 timm==0.4.5
 
 data prepare: ImageNet with the following folder structure, you can extract imagenet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4).
