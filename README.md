@@ -10,6 +10,8 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 
 ### Update
 
+**2021.6: Support `pip install tlmm` to use our Token Labeling for image models.**
+
 **2021.6: Release training code and segmentation model.**
 
 **2021.4: Release LV-ViT models.**
