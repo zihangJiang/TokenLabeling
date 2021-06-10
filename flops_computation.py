@@ -1,9 +1,9 @@
-import models
+import tlmm.models
 # summary of model flops and parameters
 
-model_list = [models.lvvit_s,
-              models.lvvit_m,
-              models.lvvit_l]
+model_list = [tlmm.models.lvvit_s,
+              tlmm.models.lvvit_m,
+              tlmm.models.lvvit_l]
 
 img_size_list=[224,288,384,448]
 

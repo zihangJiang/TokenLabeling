@@ -24,10 +24,10 @@ from timm.optim import create_optimizer
 from timm.scheduler import create_scheduler
 from timm.utils import ApexScaler, NativeScaler
 
-import models
-from data import create_token_label_target, TokenLabelMixup, FastCollateTokenLabelMixup, create_token_label_loader, create_token_label_dataset
-from loss import TokenLabelCrossEntropy, TokenLabelSoftTargetCrossEntropy
-from utils import load_for_transfer_learning
+import tlmm.models
+from tlmm.data import create_token_label_target, TokenLabelMixup, FastCollateTokenLabelMixup, create_token_label_loader, create_token_label_dataset
+from tlmm.loss import TokenLabelCrossEntropy, TokenLabelSoftTargetCrossEntropy
+from tlmm.utils import load_for_transfer_learning
 
 
 try:
