@@ -359,7 +359,7 @@ def main():
         args.num_classes = model.num_classes  # FIXME handle model default vs config num_classes more elegantly
     
     if args.finetune:
-        load_for_transfer_learning(model=model,checkpoint_path=args.finetune,use_ema=args.model_ema, strict=False)
+        load_for_transfer_learning(model=model,checkpoint_path=args.finetune,use_ema=args.model_ema, strict=False, num_classes=args.num_classes)
 
     if args.local_rank == 0:
         _logger.info('Model %s created, param count: %d' %
@@ -569,14 +569,10 @@ def main():
             train_loss_fn = TokenLabelCrossEntropy(dense_weight=args.dense_weight,\
                 cls_weight = args.cls_weight, mixup_active = mixup_active).cuda()
 
-    elif mixup_active:
-        # smoothing is handled with mixup target transform
-        train_loss_fn = SoftTargetCrossEntropy().cuda()
-    elif args.smoothing:
-        # TODO: make sure smoothing is not applied twice
-        train_loss_fn = LabelSmoothingCrossEntropy(smoothing=0.0).cuda()
     else:
-        train_loss_fn = nn.CrossEntropyLoss().cuda()
+        # smoothing is handled with mixup target transform or create_token_label_target function
+        train_loss_fn = SoftTargetCrossEntropy().cuda()
+        
     validate_loss_fn = nn.CrossEntropyLoss().cuda()
 
     # setup checkpoint saver and eval metric tracking

@@ -85,6 +85,8 @@ def load_state_dict(checkpoint_path,model, use_ema=False, num_classes=1000):
             # completely discard fully connected for all other differences between pretrained and created model
             del state_dict['head' + '.weight']
             del state_dict['head' + '.bias']
+            old_aux_head_weight = state_dict.pop('aux_head.weight', None)
+            old_aux_head_bias = state_dict.pop('aux_head.bias', None)
 
 
         old_posemb = state_dict['pos_embed']
