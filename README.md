@@ -10,7 +10,7 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 
 ### Update
 
-**2021.6: Support `pip install tlmm` to use our Token Labeling for image models.**
+**2021.6: Support `pip install tlt` to use our Token Labeling Toolbox for image models.**
 
 **2021.6: Release training code and segmentation model.**
 
@@ -97,6 +97,11 @@ If you want to train our LV-ViT on images with 384x384 resolution, please use `-
 To Fine-tune the pre-trained LV-ViT-S on images with 384x384 resolution:
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./distributed_train.sh 8 /path/to/imagenet --model lvvit_s -b 64 --apex-amp --img-size 384 --drop-path 0.1 --token-label --token-label-data /path/to/label_data --token-label-size 24 --lr 5.e-6 --min-lr 5.e-6 --weight-decay 1.e-8 --finetune /path/to/checkpoint
+```
+
+To Fine-tune the pre-trained LV-ViT-S on other datasets without token labeling:
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./distributed_train.sh 8 /path/to/dataset --model lvvit_s -b 64 --apex-amp --img-size 224 --drop-path 0.1 --token-label --token-label-size 14 --dense-weight 0.0 --num-classes $NUM_CLASSES --finetune /path/to/checkpoint
 ```
 
 ### Segmentation

@@ -20,7 +20,7 @@ from timm.models import create_model, apply_test_time_pool, load_checkpoint, is_
 from timm.models.helpers import load_state_dict
 from timm.data import create_dataset, create_loader, resolve_data_config, RealLabelsImagenet
 from timm.utils import accuracy, AverageMeter, natural_key, setup_default_logging, set_jit_legacy
-import tlmm.models
+import tlt.models
 
 has_apex = False
 try:

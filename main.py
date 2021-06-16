@@ -24,10 +24,10 @@ from timm.optim import create_optimizer
 from timm.scheduler import create_scheduler
 from timm.utils import ApexScaler, NativeScaler
 
-import tlmm.models
-from tlmm.data import create_token_label_target, TokenLabelMixup, FastCollateTokenLabelMixup, create_token_label_loader, create_token_label_dataset
-from tlmm.loss import TokenLabelCrossEntropy, TokenLabelSoftTargetCrossEntropy
-from tlmm.utils import load_for_transfer_learning
+import tlt.models
+from tlt.data import create_token_label_target, TokenLabelMixup, FastCollateTokenLabelMixup, create_token_label_loader, create_token_label_dataset
+from tlt.loss import TokenLabelCrossEntropy, TokenLabelSoftTargetCrossEntropy
+from tlt.utils import load_pretrained_weights
 
 
 try:
@@ -359,7 +359,7 @@ def main():
         args.num_classes = model.num_classes  # FIXME handle model default vs config num_classes more elegantly
     
     if args.finetune:
-        load_for_transfer_learning(model=model,checkpoint_path=args.finetune,use_ema=args.model_ema, strict=False, num_classes=args.num_classes)
+        load_pretrained_weights(model=model,checkpoint_path=args.finetune,use_ema=args.model_ema, strict=False, num_classes=args.num_classes)
 
     if args.local_rank == 0:
         _logger.info('Model %s created, param count: %d' %

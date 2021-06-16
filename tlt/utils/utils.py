@@ -106,7 +106,7 @@ def load_state_dict(checkpoint_path,model, use_ema=False, num_classes=1000):
         raise FileNotFoundError()
 
 
-def load_for_transfer_learning(model, checkpoint_path, use_ema=False, strict=True, num_classes=1000):
+def load_pretrained_weights(model, checkpoint_path, use_ema=False, strict=True, num_classes=1000):
     state_dict = load_state_dict(checkpoint_path, model, use_ema, num_classes)
     model.load_state_dict(state_dict, strict=strict)
 

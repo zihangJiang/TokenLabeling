@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-  name = 'tlmm',
+  name = 'tlt',
   packages = find_packages(exclude=['seg','visualize']),
   version = '0.1.0',
   license='Apache License 2.0',
-  description = 'Token labeling for training image models',
+  description = 'Token Labeling Toolbox for training image models',
   author = 'Zihang Jiang',
   author_email = 'jzh0103@gmail.com',
   url = 'https://github.com/zihangJiang/TokenLabeling',
