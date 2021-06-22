@@ -135,9 +135,9 @@ We apply the visualization method in this [repo](https://github.com/hila-chefer/
 #### Reference
 If you use this repo or find it useful, please consider citing:
 ```
-@article{jiang2021token,
-  title={Token Labeling: Training a 85.5\% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet},
-  author={Jiang, Zihang and Hou, Qibin and Yuan, Li and Zhou, Daquan and Jin, Xiaojie and Wang, Anran and Feng, Jiashi},
+@article{jiang2021all,
+  title={All Tokens Matter: Token Labeling for Training Better Vision Transformers},
+  author={Jiang, Zihang and Hou, Qibin and Yuan, Li and Zhou, Daquan and Shi, Yujun and Jin, Xiaojie and Wang, Anran and Feng, Jiashi},
   journal={arXiv preprint arXiv:2104.10858},
   year={2021}
 }
