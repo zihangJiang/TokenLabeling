@@ -62,7 +62,7 @@ CUDA_VISIBLE_DEVICES=0 bash eval.sh /path/to/imagenet/val /path/to/checkpoint
 
 #### Label data
 
-We provide NFNet-F6 generated dense label map [here](https://drive.google.com/file/d/1Cat8HQPSRVJFPnBLlfzVE0Exe65a_4zh/view?usp=sharing). As NFNet-F6 are based on pure ImageNet data, no extra training data is involved.
+We provide NFNet-F6 generated dense label map in [Google Drive](https://drive.google.com/file/d/1Cat8HQPSRVJFPnBLlfzVE0Exe65a_4zh/view?usp=sharing) and [BaiDu Yun](https://pan.baidu.com/s/1YBqiNN9dAzhEXtPl61bZJw) (password: y6j2). As NFNet-F6 are based on pure ImageNet data, no extra training data is involved.
 
 
 #### Training
