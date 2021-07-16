@@ -9,6 +9,7 @@ Comparison between the proposed LV-ViT and other recent works based on transform
 Our codes are based on the [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) by [Ross Wightman](https://github.com/rwightman).
 
 ### Update
+**2021.7: Add script to generate label data.**
 
 **2021.6: Support `pip install tlt` to use our Token Labeling Toolbox for image models.**
 
@@ -131,6 +132,12 @@ cd mmsegmentation
 We apply the visualization method in this [repo](https://github.com/hila-chefer/Transformer-Explainability) to visualize the parts of the image that led to a certain classification for DeiT-Base and our LV-ViT-S. The parts of the image that used by the network to make the decision are highlighted in red.
 
 ![Compare](figures/Top1.jpg)
+
+### Label generation
+To generate token label data for training:
+```bash
+python3 generate_label.py /path/to/imagenet/train /path/to/save/label_top5_train_nfnet --model dm_nfnet_f6 --pretrained --img-size 576 -b 32 --crop-pct 1.0
+```
 
 #### Reference
 If you use this repo or find it useful, please consider citing:

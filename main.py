@@ -273,7 +273,8 @@ parser.add_argument('--dense-weight', type=float, default=1.0,
                     help='Token labeling loss multiplier (default: 1.0)')
 parser.add_argument('--cls-weight', type=float, default=1.0,
                     help='Cls token prediction loss multiplier (default: 1.0)')
-
+parser.add_argument('--ground-truth', action='store_true', default=False,
+                    help='Use ground truth label to help refine generated target label')
 
 
 # Finetune
@@ -567,7 +568,7 @@ def main():
             train_loss_fn = TokenLabelSoftTargetCrossEntropy().cuda()
         else:
             train_loss_fn = TokenLabelCrossEntropy(dense_weight=args.dense_weight,\
-                cls_weight = args.cls_weight, mixup_active = mixup_active).cuda()
+                cls_weight = args.cls_weight, mixup_active = mixup_active, ground_truth=args.ground_truth).cuda()
 
     else:
         # smoothing is handled with mixup target transform or create_token_label_target function

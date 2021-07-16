@@ -36,7 +36,7 @@ class TokenLabelCrossEntropy(nn.Module):
     """
     Token labeling loss.
     """
-    def __init__(self, dense_weight=1.0, cls_weight = 1.0, mixup_active=True, classes = 1000):
+    def __init__(self, dense_weight=1.0, cls_weight = 1.0, mixup_active=True, classes = 1000, ground_truth = False):
         """
         Constructor Token labeling loss.
         """
@@ -49,6 +49,7 @@ class TokenLabelCrossEntropy(nn.Module):
         self.mixup_active = mixup_active
         self.classes = classes
         self.cls_weight = cls_weight
+        self.ground_truth = ground_truth
         assert dense_weight+cls_weight>0
 
 
@@ -61,9 +62,14 @@ class TokenLabelCrossEntropy(nn.Module):
         if len(target.shape)==2:
             target_cls=target
             target_aux = target.repeat(1,N).reshape(B*N,C)
-        else:
-            # ground_truth = target[:,:,0]
+        else: 
             target_cls = target[:,:,1]
+            if self.ground_truth:
+                # use ground truth to help correct label.
+                # rely more on ground truth if target_cls is incorrect.
+                ground_truth = target[:,:,0]
+                ratio = (0.9 - 0.4 * (ground_truth.max(-1)[1] == target_cls.max(-1)[1])).unsqueeze(-1)
+                target_cls = target_cls * ratio + ground_truth * (1 - ratio)
             target_aux = target[:,:,2:]
             target_aux = target_aux.transpose(1,2).reshape(-1,C)
         lam = 1 - ((bbx2 - bbx1) * (bby2 - bby1) / N)
