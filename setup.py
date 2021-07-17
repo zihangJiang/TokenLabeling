@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
   name = 'tlt',
   packages = find_packages(exclude=['seg','visualize']),
-  version = '0.1.0',
+  version = '0.1.1',
   license='Apache License 2.0',
   description = 'Token Labeling Toolbox for training image models',
   author = 'Zihang Jiang',
