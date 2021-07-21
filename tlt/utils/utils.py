@@ -81,7 +81,7 @@ def load_state_dict(checkpoint_path,model, use_ema=False, num_classes=1000):
         else:
             state_dict = checkpoint
         _logger.info("Loaded {} from checkpoint '{}'".format(state_dict_key, checkpoint_path))
-        if num_classes != state_dict['head.weight'].shape[-1]:
+        if num_classes != state_dict['head.bias'].shape[0]:
             # completely discard fully connected for all other differences between pretrained and created model
             del state_dict['head.weight']
             del state_dict['head.bias']
