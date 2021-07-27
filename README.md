@@ -25,7 +25,7 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 | LV-ViT-S                        | 16    | 384  |       384        |  26.30M |  84.4 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-384-84.4.pth.tar) |
 | LV-ViT-M                        | 20    | 512  |       224        |  55.83M |  84.0 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-224-84.0.pth.tar) |
 | LV-ViT-M                        | 20    | 512  |       384        |  56.03M |  85.4 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-384-85.4.pth.tar) |
-| LV-ViT-M                        | 20    | 512  |       448        |  56.13M |  85.5 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.1/lvvit_m-56M-448-85.5.pth.tar) |
+| LV-ViT-M                        | 20    | 512  |       448        |  56.13M |  85.5 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-448-85.5.pth.tar) |
 | LV-ViT-L                        | 24    | 768  |       448        | 150.47M |  86.2 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_l-150M-448-86.2.pth.tar) |
 | LV-ViT-L                        | 24    | 768  |       512        | 150.66M |  86.4 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_l-150M-512-86.4.pth.tar) |
 
