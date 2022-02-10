@@ -237,6 +237,14 @@ def lvvit(pretrained=False, **kwargs):
     return model
 
 @register_model
+def lvvit_t(pretrained=False, **kwargs):
+    model = LV_ViT(patch_size=16, embed_dim=240, depth=12, num_heads=4, mlp_ratio=3.,
+        p_emb='4_2',skip_lam=1., return_dense=True,mix_token=True, **kwargs)
+    model.default_cfg = default_cfgs['LV_ViT_Tiny']
+    return model
+
+
+@register_model
 def lvvit_s(pretrained=False, **kwargs):
     model = LV_ViT(patch_size=16, embed_dim=384, depth=16, num_heads=6, mlp_ratio=3.,
         p_emb='4_2',skip_lam=2., return_dense=True,mix_token=True, **kwargs)
