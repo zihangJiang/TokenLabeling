@@ -21,6 +21,7 @@ Our codes are based on the [pytorch-image-models](https://github.com/rwightman/p
 
 | Model                           | layer | dim  | Image resolution |  Param  | Top 1 |Download |
 | :------------------------------ | :---- | :--- | :--------------: |-------: | ----: |   ----: |
+| LV-ViT-T                        | 12    | 240  |       224        |  8.53M |  79.1 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/v0.2.0/lvvit_t.pth) |
 | LV-ViT-S                        | 16    | 384  |       224        |  26.15M |  83.3 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-224-83.3.pth.tar) |
 | LV-ViT-S                        | 16    | 384  |       384        |  26.30M |  84.4 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_s-26M-384-84.4.pth.tar) |
 | LV-ViT-M                        | 20    | 512  |       224        |  55.83M |  84.0 |[link](https://github.com/zihangJiang/TokenLabeling/releases/download/1.0/lvvit_m-56M-224-84.0.pth.tar) |
