@@ -143,11 +143,16 @@ python3 generate_label.py /path/to/imagenet/train /path/to/save/label_top5_train
 #### Reference
 If you use this repo or find it useful, please consider citing:
 ```
-@article{jiang2021all,
-  title={All Tokens Matter: Token Labeling for Training Better Vision Transformers},
-  author={Jiang, Zihang and Hou, Qibin and Yuan, Li and Zhou, Daquan and Shi, Yujun and Jin, Xiaojie and Wang, Anran and Feng, Jiashi},
-  journal={arXiv preprint arXiv:2104.10858},
-  year={2021}
+@inproceedings{NEURIPS2021_9a49a25d,
+ author = {Jiang, Zi-Hang and Hou, Qibin and Yuan, Li and Zhou, Daquan and Shi, Yujun and Jin, Xiaojie and Wang, Anran and Feng, Jiashi},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {M. Ranzato and A. Beygelzimer and Y. Dauphin and P.S. Liang and J. Wortman Vaughan},
+ pages = {18590--18602},
+ publisher = {Curran Associates, Inc.},
+ title = {All Tokens Matter: Token Labeling for Training Better Vision Transformers},
+ url = {https://proceedings.neurips.cc/paper/2021/file/9a49a25d845a483fae4be7e341368e36-Paper.pdf},
+ volume = {34},
+ year = {2021}
 }
 ```
 
